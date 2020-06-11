@@ -12,7 +12,7 @@ public class EmailAddress {
         if (!validate(emailAddress)) {
             throw new InvalidParameterException("Email address not valid: '" + emailAddress + "'");
         }
-        emailMap.put(type, emailAddress);
+            emailMap.put(type, emailAddress);
     }
 
     public String getEmailAddress() {
@@ -41,6 +41,13 @@ public class EmailAddress {
     // 3) end in ".edu" or ".com"
     // 20 points
     static boolean validate(String emailAddress) {
-        return false;
+            boolean valid = false;
+            if(emailAddress != null
+                    && emailAddress.contains("@")
+                    && (emailAddress.endsWith(".edu")
+                    || emailAddress.endsWith(".com"))){
+                valid = true;
+            }
+            return valid;
     }
 }

@@ -39,6 +39,8 @@ public class Name {
     //TODO -- implement toString using StringBuilder 2 points
     @Override
     public String toString() {
-        return null;
+        StringBuilder fullname = new StringBuilder();
+        fullname.append(getLastName()).append(", ").append(getFirstName());
+        return fullname.toString();
     }
 }
